@@ -23,9 +23,9 @@ User profile micro app.
 
 ## Overview
 
-Each microfrontend is developed as an independent repository to allow modular development, easy deployment, and seamless integration using microfrontend architecture principles.
+Each microfrontend is developed as an independent repository to allow modular development, easy deployment,(CI/CD) and seamless integration using microfrontend architecture principles.
 
-Feel free to explore the code, issues, and demos in each repository.
+Feel free to explore the code in the repository
 
 ---
 

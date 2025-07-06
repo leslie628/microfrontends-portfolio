@@ -1,4 +1,4 @@
-# Microfrontend Projects Portfolio
+# Microfrontend Portfolio (MSc dissertation)
 
 Welcome to my Microfrontend Projects collection! This repository serves as a centralized showcase for all my microfrontend repositories.
 
@@ -26,7 +26,11 @@ Auth micro app (allows user to register and login).
 
 ## Overview
 
-Each microfrontend is developed as an independent repository to allow modular development, easy deployment,(CI/CD) and seamless integration using microfrontend architecture principles.
+Each microfrontend is developed as an independent repository to allow modular development, easy deployment,(CI/CD) and seamless integration using microfrontend architecture principles. The goal of this dissertation is to compare a monolith application with a micro frontend architecture to analyse and evaluate the benefits of modular development.
+
+## Monolith vs Micro Frontend architecture diagram. 
+![Microfrontend Architecture](./images/Monolith-MicroFrontend-Architecture.jpeg)
+
 
 Feel free to explore the code in the repository
 

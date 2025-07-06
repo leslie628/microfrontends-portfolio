@@ -28,7 +28,7 @@ Auth micro app (allows user to register and login).
 
 Each microfrontend is developed as an independent repository to allow modular development, easy deployment,(CI/CD) and seamless integration using microfrontend architecture principles. The goal of this dissertation is to compare a monolith application with a micro frontend architecture to analyse and evaluate the benefits of modular development.
 
-## Monolith vs Micro Frontend architecture diagram. 
+## Monolith vs Micro Frontend architecture diagram (my design as per repos). 
 ![Microfrontend Architecture](./images/Monolith-MicroFrontend-Architecture.png)
 
 

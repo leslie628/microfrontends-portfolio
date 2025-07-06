@@ -19,6 +19,9 @@ Settings micro app.
 ### 5. [User profile Microfrontend](https://github.com/leslie628/user-profile)  
 User profile micro app.
 
+### 6. [Auth Microfrontend](https://github.com/leslie628/auth-app)  
+Auth micro app (allows user to register and login).
+
 ---
 
 ## Overview

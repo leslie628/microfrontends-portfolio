@@ -20,7 +20,7 @@ Settings micro app.
 User profile micro app.
 
 ### 6. [Auth Microfrontend](https://github.com/leslie628/auth-app)  
-Auth micro app (allows user to register and login).
+Auth micro app (allows user to register and login). The micro app uses Azure functions for backend login and registration functionality. The Azure function base url is stored in shell app azure pipeline for security purposes and passed from the shell app to the auth micro app as props.
 
 ---
 

@@ -31,6 +31,63 @@ Each microfrontend is developed as an independent repository to allow modular de
 ## Monolith vs Micro Frontend architecture diagram (my design as per repos). 
 ![Microfrontend Architecture](./images/Monolith-MicroFrontend-Architecture.png)
 
+## Evaluation explanation
+
+The key non-functional attributes of the micro frontend architecture that will be evaluated are scalability, maintainability, performance, team autonomy and framework flexibility. Comparisons are made to the monolith application and how it addresses its limitations.
+
+## Scalability
+Any number of micro apps can be plugged in the shell app without having to rebuild and redploy shell app. The shell app is decoupled from the micro app and does not need to know the internal details of the micro app. This is done by externalising two files importmap.json and routes.json. This can be done in the cloud storage itself and the shell app will dynamically generate the menu items using the routes from routes.json and register them. 
+
+![import map configurations](./images/importmap.png)
+
+![Routes configurations](./images/routes.png)
+
+## Maintainability
+Any time a change is needed or bug needs to be fixed, the team can clone the respective micro app repository and make the changes. Once the changes are pushed, the pipeline will be triggered automatically and the artifact will be deployed to the respective micro app blob container. Each micro app has its own repository, CI/CD pipeline and azure blob storage container as below. Additionally, if any micro app throws error it will be contained in that micro app and won't affect the shell app and other micro apps. The whole application continues to work properly.
+
+### Micro app repositories
+![repositories](./images/microfrontend-repos.png)
+
+### Micro app independent CI/CD pipelines.
+![pipelines](./images/allPipelines.png)
+
+### Micro app separate blob containers.
+![blob-container](./images/azure-blob-container.png)
+
+Shell app is marked in green and micro apps are marked in yellow.
+
+### Error isolation for each micro app.
+![profile-microapp-error](./images/user-profile-ui-error.png)
+
+### Monolith whole application broken if any module breaks
+![monolith-error](./images/monolithic-dashboard-userStatfault.png)
+
+## Performance
+The shell app will only load the micro apps on demand using lazy loading. So initial load time will be less. Besides this, since the micro apps are modular and smaller in size, the load time will be much faster in browser. There are shared files requested by micro app which increases the size and number of requests in total tab, but these are loaded from disk for subsequent requests. The key point here is not the shared files but the size of the micro app file. See below size of micro apps and load time. 
+The monolith application size of main.js is bigger as compared to micro app. This is because it loads all modules in advance and does not need to request any resources on demand later.  
+
+### Network of monolith application
+![network-monolith](./images/monolithic-dashboard-network.png)
+
+### Network of micro frontend application
+![network-microapp](./images/feedback-micro-network.png)
+
+### Micro app pipeline vs Monolith pipeline
+Additionally, pipeline run time for each micro app is faster due to reduced code size. The monolith application pipeline runtime seems smaller here but will inevitably increase due to larger code size as the application evolves.
+
+![pipeline-microapp](./images/profile-microapp-pipeline.png) ![pipeline-monolith](./images/monolith-pipeline-run.png)
+
+## Team autonomy
+Separate teams created for each micro app and will take ownership of each micro app repository. Teams will work independently on each micro app which includes setting up the pipeline, repo and blob container. After development and deployment, teams have to plug the micro app by configuring the two files, routes.json and importmap.json as mentioned above in scalability attribute.
+
+![teams-board](./images/teams-board.png)
+
+## Framework flexibility
+### Micro app deveoped using angular framework.
+![microapp-angular](./images/framework-angular.png)
+
+### Micro app deveoped using react.
+![microapp-react](./images/framework-react.png)
 
 Feel free to explore the code in the repository
 

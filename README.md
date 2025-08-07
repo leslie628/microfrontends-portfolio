@@ -43,7 +43,9 @@ Any number of micro apps can be plugged in the shell app without having to rebui
 ![Routes configurations](./images/routes.png)
 
 ## Maintainability
-Any time a change is needed or bug needs to be fixed, the team can clone the respective micro app repository and make the changes. Once the changes are pushed, the pipeline will be triggered automatically and the artifact will be deployed to the respective micro app blob container. Each micro app has its own repository, CI/CD pipeline and azure blob storage container as below. Additionally, if any micro app throws error it will be contained in that micro app and won't affect the shell app and other micro apps. The whole application continues to work properly.
+Any time a change is needed or bug needs to be fixed, the team can clone the respective micro app repository and make the changes. Once the changes are pushed, the pipeline will be triggered automatically and the artifact will be deployed to the respective micro app blob container. Each micro app has its own repository, CI/CD pipeline and azure blob storage container as below. Additionally, if any micro app throws error it will be contained in that micro app and won't affect the shell app and other micro apps. The whole application continues to work properly.  
+
+On the other hand, any small change for a monolith application will carry regression risks, because of tight coupling between modules. So, there are chances of breaking the whole app. A small change by a developer will trigger the pipeline for the entire code base, which results in more deployment time.
 
 ### Micro app repositories
 ![repositories](./images/microfrontend-repos.png)
@@ -78,15 +80,21 @@ Additionally, pipeline run time for each micro app is faster due to reduced code
 ![pipeline-microapp](./images/profile-microapp-pipeline.png) ![pipeline-monolith](./images/monolith-pipeline-run.png)
 
 ## Team autonomy
-Separate teams created for each micro app and will take ownership of each micro app repository. Teams will work independently on each micro app which includes setting up the pipeline, repo and blob container. After development and deployment, teams have to plug the micro app by configuring the two files, routes.json and importmap.json as mentioned above in scalability attribute.
+Separate teams created for each micro app and will take ownership of each micro app repository. Teams will work independently on each micro app which includes setting up the pipeline, repo and blob container. After development and deployment, teams have to plug the micro app by configuring the two files, routes.json and importmap.json as mentioned above in scalability attribute. See https://github.com/leslie628/Shell-app/blob/main/docs/azure-deployment.md
+
+In case of a monolith, teams all work on the same repo. They build and deploy using a single pipeline. Teams will be blocked by each other. If one team is already running a pipeline deployment, other teams have to wait. Parallel deployment would not be possible. Merge conflicts will be common in such applications as no separation of concern.
 
 ![teams-board](./images/teams-board.png)
 
+### Team board task created for onboarding new micro app.
+![teams-microapp-onboard](./images/feedback-doing.png)
+
 ## Framework flexibility
-### Micro app deveoped using angular framework.
+Teams can use a technology of their choice to develop their micro app. No tight coupling between shell app and micro apps. 
+### Micro app developed using angular framework.
 ![microapp-angular](./images/framework-angular.png)
 
-### Micro app deveoped using react.
+### Micro app developed using react.
 ![microapp-react](./images/framework-react.png)
 
 Feel free to explore the code in the repository

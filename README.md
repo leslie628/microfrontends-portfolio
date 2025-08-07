@@ -67,8 +67,9 @@ Shell app is marked in green and micro apps are marked in yellow.
 ![monolith-error](./images/monolithic-dashboard-userStatfault.png)
 
 ## Performance
-The shell app will only load the micro apps on demand using lazy loading. So initial load time will be less. Besides this, since the micro apps are modular and smaller in size, the load time will be much faster in browser. There are shared files requested by micro app which increases the size and number of requests in total tab, but these are loaded from disk for subsequent requests. The key point here is not the shared files but the size of the micro app file. See below size of micro apps and load time. 
-The monolith application size of main.js is bigger as compared to micro app. This is because it loads all modules in advance and does not need to request any resources on demand later.  
+The shell app will only load the micro apps on demand using lazy loading. So initial load time will be less. Besides this, since the micro apps are modular and smaller in size, the load time will be much faster in browser. There are shared files requested by micro app which increases the size and number of requests in total tab, but these are loaded from disk for subsequent requests. The key point here is not the shared files but the size of the micro app file. See below screenshots for size of micro apps and load time. 
+
+The size of main.js in the monolith application is larger as compared to the micro app. This is because it loads all modules in advance and does not need to request any resources on demand later.
 
 ### Network of monolith application
 ![network-monolith](./images/monolithic-dashboard-network.png)
@@ -86,6 +87,7 @@ Separate teams created for each micro app and will take ownership of each micro 
 
 In case of a monolith, teams all work on the same repo. They build and deploy using a single pipeline. Teams will be blocked by each other. If one team is already running a pipeline deployment, other teams have to wait. Parallel deployment would not be possible. Merge conflicts will be common in such applications as no separation of concern.
 
+### Separate teams for each mico app
 ![teams-board](./images/teams-board.png)
 
 ### Team board task created for onboarding new micro app.

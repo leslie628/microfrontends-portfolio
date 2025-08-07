@@ -33,7 +33,7 @@ Each microfrontend is developed as an independent repository to allow modular de
 
 ## Evaluation explanation
 
-The key non-functional attributes of the micro frontend architecture that will be evaluated are scalability, maintainability, performance, team autonomy and framework flexibility. This evaluation includes a comparison with the monolithic application, highlighting how the micro frontend approach addresses its limitations
+The key non-functional attributes of the micro frontend architecture that will be evaluated are scalability, maintainability, performance, team autonomy and framework flexibility. This evaluation includes a comparison with the monolithic application, highlighting how the micro frontend approach addresses its limitations.
 
 ## Scalability
 Any number of micro apps can be plugged in the shell app without having to rebuild and redploy shell app. The shell app is decoupled from the micro app and does not need to know the internal details of the micro app. This is done by externalising two files importmap.json and routes.json. This can be done in the cloud storage itself and the shell app will dynamically generate the menu items using the routes from routes.json and register them. 

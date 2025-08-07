@@ -65,8 +65,9 @@ Shell app is marked in green and micro apps are marked in yellow.
 ![monolith-error](./images/monolithic-dashboard-userStatfault.png)
 
 ## Performance
-The shell app will only load the micro apps on demand using lazy loading. So initial load time will be less. Besides this, since the micro apps are modular and smaller in size, the load time will be much faster in browser. There are shared files requested by micro app which increases the size and number of requests in total tab, but these are loaded from disk for subsequent requests. The key point here is not the shared files but the size of the micro app file. See below size of micro apps and load time. 
-The monolith application size of main.js is bigger as compared to micro app. This is because it loads all modules in advance and does not need to request any resources on demand later.  
+The shell app will only load the micro apps on demand using lazy loading. So initial load time will be less. Besides this, since the micro apps are modular and smaller in size, the load time will be much faster in browser. There are shared files requested by micro app which increases the size and number of requests in total tab, but these are loaded from disk for subsequent requests. The key point here is not the shared files but the size of the micro app file. See below screenshots for size of micro apps and load time. 
+
+The size of main.js in the monolith application is larger as compared to the micro app. This is because it loads all modules in advance and does not need to request any resources on demand later.
 
 ### Network of monolith application
 ![network-monolith](./images/monolithic-dashboard-network.png)

@@ -38,7 +38,9 @@ The key non-functional attributes of the micro frontend architecture that will b
 ## Scalability
 Any number of micro apps can be plugged in the shell app without having to rebuild and redploy shell app. The shell app is decoupled from the micro app and does not need to know the internal details of the micro app. This is done by externalising two files importmap.json and routes.json. This can be done in the cloud storage itself and the shell app will dynamically generate the menu items using the routes from routes.json and register them. 
 
-![import map configurations](./images/importmap.png)
+![shell app micro app config](./images/config-files.png)
+
+![import map configurations](./images/import-maps-azure.png)
 
 ![Routes configurations](./images/routes.png)
 

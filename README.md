@@ -85,6 +85,7 @@ Separate teams created for each micro app and will take ownership of each micro 
 
 In case of a monolith, teams all work on the same repo. They build and deploy using a single pipeline. Teams will be blocked by each other. If one team is already running a pipeline deployment, other teams have to wait. Parallel deployment would not be possible. Merge conflicts will be common in such applications as no separation of concern.
 
+### Separate teams for each mico app
 ![teams-board](./images/teams-board.png)
 
 ### Team board task created for onboarding new micro app.

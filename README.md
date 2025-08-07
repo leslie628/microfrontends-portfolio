@@ -1,6 +1,6 @@
-# Microfrontend Portfolio (MSc dissertation)
+# Microfrontend architecture Portfolio (MSc dissertation)
 
-Welcome to my Microfrontend Projects collection! This repository serves as a centralized showcase for all my microfrontend repositories.
+This repository serves as a centralized showcase for my micro frontend research.
 
 ## Projects
 
